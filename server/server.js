@@ -12,8 +12,10 @@ app.use( bodyParser.urlencoded( { extended: false } ) );
 // parse application/json
 app.use( bodyParser.json() );
 
-// usar la configuracion de controladores/usuario
-app.use( require('./controladores/usuario') );
+// usar la configuracion de controladores/index.js
+app.use( require('./controladores/index') );
+
+
 
 
 

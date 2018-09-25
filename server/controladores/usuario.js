@@ -2,13 +2,15 @@ const express = require('express');
 const Usuario = require('../modelos/usuario');
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
+const { verificaToken, verifica_Admin } = require("../middlewares/autenticacion");
+
 
 const app = express();
 
 
 
 //GET
-app.get('/usuario', (req, res) => {
+app.get('/usuario', verificaToken, (req, res) => {
 
 	// recupera consulta
 	let desde = req.query.desde || 0;
@@ -42,7 +44,7 @@ app.get('/usuario', (req, res) => {
 });
 
 //POST
-app.post('/usuario', (req, res) => {
+app.post('/usuario', [verificaToken, verifica_Admin], (req, res) => {
 
 	//contenido enviado por post
 	let body = req.body;
@@ -73,7 +75,7 @@ app.post('/usuario', (req, res) => {
 });
 
 //PUT el :id indica parametro id
-app.put('/usuario/:id', (req, res) => {
+app.put('/usuario/:id', [verificaToken, verifica_Admin], (req, res) => {
 
 	//se recupera el parametro
 	let id = req.params.id;
@@ -101,7 +103,7 @@ app.put('/usuario/:id', (req, res) => {
 });
 
 //DELETE
-app.delete('/usuario/:id', (req, res) => {
+app.delete('/usuario/:id', [verificaToken, verifica_Admin], (req, res) => {
 	
 	let id = req.params.id;
 
