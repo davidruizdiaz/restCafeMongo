@@ -25,6 +25,10 @@ process.env.CADUCIDAD_TOKEN = '30d';
 process.env.SEED = process.env.SEED || 'seed-c&s-devs-desarrollo'
 
 
+/**
+ * ClientId de google
+ */
+process.env.CLIENT_ID = process.env.CLIENT_ID || '317706409678-glt2csi85e9sh7sft06gqmjqlr9o4hqj.apps.googleusercontent.com'
 
 /**
  * Configuración de la base de datos

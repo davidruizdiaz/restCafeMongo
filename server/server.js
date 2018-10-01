@@ -1,6 +1,10 @@
 require('./config/config.js');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+
+// para las rutas del proyecto
+const path = require('path');
+
 const express = require('express');
 const app = express();
 
@@ -11,6 +15,9 @@ app.use( bodyParser.urlencoded( { extended: false } ) );
 
 // parse application/json
 app.use( bodyParser.json() );
+
+// habilita la carpeta public
+app.use( express.static( path.resolve( __dirname , "../public" ) ) );
 
 // usar la configuracion de controladores/index.js
 app.use( require('./controladores/index') );
