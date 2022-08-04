@@ -4,7 +4,7 @@ const Rss = require('../modelos/rss');
 let app = express();
 
 
-// GET de productos con paginación, espera parametros desde y limite
+// GET de feelds
 app.get('/rss', async (req, res) => {
 
     try {

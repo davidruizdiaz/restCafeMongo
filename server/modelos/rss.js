@@ -9,4 +9,4 @@ var rssSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Rss', productoSchema);
+module.exports = mongoose.model('Rss', rssSchema);
