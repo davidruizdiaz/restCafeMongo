@@ -42,6 +42,7 @@ if (process.env.NODE_ENV === 'dev') {
 	
 } else {
 
+    //DB_URI: mongodb://d4v1d:david123@ds133622.mlab.com:33622/cafe_drdm
 	urlDB = process.env.DB_URI;
 	
 }

@@ -10,6 +10,8 @@ app.use( require('./login') );
 app.use( require('./categoria') );
 // usar la configuracion de controladores/producto
 app.use( require('./producto') );
+// usar la configuracion de controladores/rss
+app.use( require('./rss') );
 
 
 
